@@ -3,18 +3,18 @@
 # Contributor: Austin ( doorknob60 [at] gmail [dot] com )
 # Contributor: Gaetan Bisson <bisson@archlinux.org>
 
-pkgname=broadcom-wl-ck
+pkgname=broadcom-wl-pf
 pkgver=6.30.223.271
 pkgrel=11
 _pkgdesc='Broadcom 802.11abgn hybrid Linux networking device driver for linux-ck.'
-_extramodules="extramodules-4.5-ck"
+_extramodules="extramodules-4.5-pf"
 _kernver="$(cat /usr/lib/modules/${_extramodules}/version)"
 pkgdesc="${_pkgdesc}"
 arch=('i686' 'x86_64')
 url='http://www.broadcom.com/support/802.11/linux_sta.php'
 license=('custom')
-depends=('linux-ck>=4.5' 'linux-ck<4.6')
-makedepends=('linux-ck-headers>=4.5' 'linux-ck-headers<4.6')
+depends=('linux-pf>=4.5' 'linux-pf<4.6')
+makedepends=('linux-pf-headers>=4.5' 'linux-pf-headers<4.6')
 conflicts=('broadcom-wl-ck-atom' 'broadcom-wl-ck-barcelona' 'broadcom-wl-ck-bulldozer' 'broadcom-wl-ck-corex' 'broadcom-wl-ck-core2' 'broadcom-wl-ck-haswell' 'broadcom-wl-ck-broadwell' 'broadcom-wl-ck-skylake' 'broadcom-wl-ck-ivybridge' 'broadcom-wl-ck-kx' 'broadcom-wl-ck-k10' 'broadcom-wl-ck-nehalem' 'broadcom-wl-ck-p4' 'broadcom-wl-ck-piledriver' 'broadcom-wl-ck-pentm' 'broadcom-wl-ck-sandybridge' 'broadcom-wl-ck-silvermont')
 #replaces=()
 #groups=('ck-generic')
@@ -31,7 +31,7 @@ sha256sums=('b4aca51ac5ed20cb79057437be7baf3650563b7a9d5efc515f0b9b34fbb9dc32'
 sha256sums_i686=('4f8b70b293ac8cc5c70e571ad5d1878d0f29d133a46fe7869868d9c19b5058cd')
 sha256sums_x86_64=('5f79774d5beec8f7636b59c0fb07a03108eef1e3fd3245638b20858c714144be')
 
-install=broadcom-wl-ck.install
+install=broadcom-wl-pf.install
 
 prepare() {
   patch -p1 -i license.patch
